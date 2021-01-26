@@ -1,4 +1,3 @@
-"use strict";
 let myVar;
 console.log(`${myVar} = ${typeof myVar}`);
 myVar = 12;
