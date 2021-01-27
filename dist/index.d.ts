@@ -6,3 +6,13 @@ declare let umbrellaPrice: number;
 declare let prices: number[];
 declare let names: string[];
 declare let myFam: string[];
+declare let vri: string;
+declare function professionally(experienceSkills: string): void;
+declare let estate: [string, number];
+declare let car: [string, number];
+declare enum Product {
+    'Hat' = 0,
+    'Gloves' = 1,
+    'Umbrella' = 2
+}
+declare let products: [Product, number][];
