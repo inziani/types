@@ -20,16 +20,16 @@ data.forEach(item => {
 )
 
 class Employee{
-  public readonly id: string;
-  public name: string;
-  private dept: string;
-  public city: string;
+  // public readonly id: string;
+  // public name: string;
+  // private dept: string;
+  // public city: string;
 
-  constructor(id: string, name: string, dept: string, city: string){
-    this.id = id;
-    this.name = name;
-    this.dept = dept;
-    this.city = city;
+  constructor(public readonly id: string, public name: string, public dept: string, public city: string){
+    // this.id = id;
+    // this.name = name;
+    // this.dept = dept;
+    // this.city = city;
   }
   writeDept(){
     console.log(`${this.name}  works in the ${this.dept}`);
@@ -58,3 +58,32 @@ classData.forEach(item => {
 
 // console.log(`Dept Value: ${salesEmployee.dept}`)
 salesEmployee.writeDept();
+
+//  Class Inheritance
+
+class Mom{
+  constructor(public id: string, public name: string, public city: string){
+  }
+}
+
+class Baby extends Mom{
+  constructor(public id: string, public name: string, private dept: string, public city: string){
+  super(id, name, city);
+}
+
+writeDept(){
+  console.log(`${this.name} works in ${this.dept}`);
+}
+}
+
+let anotherData = [new Mom('bsmith', 'Bob Smith', 'London'), new Baby('fvega', 'Fidel Vega', 'Sales', 'Paris') ];
+
+anotherData.forEach(item => {
+  console.log(`Person: ${item.name}, ${item.city}`);
+  if(item instanceof Baby){
+    item.writeDept();
+  }
+}
+);
+
+// Understanding Type Inferences for Subclasss

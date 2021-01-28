@@ -7,10 +7,25 @@ declare let data: Woman[];
 declare class Employee {
     readonly id: string;
     name: string;
-    private dept;
+    dept: string;
     city: string;
     constructor(id: string, name: string, dept: string, city: string);
     writeDept(): void;
 }
 declare let salesEmployee: Employee;
 declare let classData: (Woman | Employee)[];
+declare class Mom {
+    id: string;
+    name: string;
+    city: string;
+    constructor(id: string, name: string, city: string);
+}
+declare class Baby extends Mom {
+    id: string;
+    name: string;
+    private dept;
+    city: string;
+    constructor(id: string, name: string, dept: string, city: string);
+    writeDept(): void;
+}
+declare let anotherData: Mom[];
